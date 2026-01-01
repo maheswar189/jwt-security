@@ -11,8 +11,6 @@ import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
 @Entity
 @Table(name="products")
 public class Product {
@@ -27,16 +25,18 @@ public class Product {
 	@Column(nullable=false)
 	private BigDecimal price;
 
-	public Product(String name, BigDecimal price) {
-		super();
-		this.name = name;
-		this.price = price;
-	}
-
 	public Product() {
 		super();
 	}
 
+
+	public Product(String name, BigDecimal price) {
+		
+		this.name = name;
+		this.price = price;
+	}
+
+	
 	public Long getId() {
 		return id;
 	}
@@ -60,6 +60,7 @@ public class Product {
 	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
+
 	
 	
 	
